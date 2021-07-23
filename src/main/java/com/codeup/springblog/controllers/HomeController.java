@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HomeController {
 
-    @GetMapping("/")
+    @GetMapping("/home")
 
     //public method that creates a string
-    public String home() {
+    public String welcome() {
         return "home";
     }
 

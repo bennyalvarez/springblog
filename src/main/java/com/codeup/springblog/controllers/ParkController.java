@@ -1,6 +1,7 @@
 package com.codeup.neptunespringblog.controllers;
 
-import com.codeup.neptunespringblog.models.Park;
+
+import com.codeup.springblog.models.Park;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

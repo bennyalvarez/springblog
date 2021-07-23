@@ -1,10 +1,16 @@
 package com.codeup.springblog.controllers;
 
+
+import com.codeup.springblog.models.Post;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Controller
 public class PostController {
+    private List<Post> posts = new ArrayList<>();
 
     @GetMapping("/posts")
     @ResponseBody
