@@ -22,7 +22,7 @@ public class AdController {
 
     @GetMapping("/ads/{n}")
     public String viewOne(@PathVariable String title, Model model) {
-        Ad ad = adDao.findOne(n)
+        Ad ad = adDao.findOne(n);
         model.addAttribute("ad", ad);
         return "ads/show";
     }
