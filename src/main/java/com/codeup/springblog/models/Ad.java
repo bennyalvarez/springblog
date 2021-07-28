@@ -21,18 +21,31 @@ public class Ad {
     private AdImage adImage;
 
     @ManyToOne
-    @JoinColumn(name="user_id")
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
-            name="ads_categories",
-            joinColumns = {@JoinColumn(name="ad_id")},
-            inverseJoinColumns = {@JoinColumn(name="category_id")}
+            name = "ads_categories",
+            joinColumns = {@JoinColumn(name = "ad_id")},
+            inverseJoinColumns = {@JoinColumn(name = "category_id")}
     )
     private List<Category> categories;
 
-    public Ad(){}
+    // constructors
+    public Ad(long id, String title, String description) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+    }
+
+    public Ad(long id, String title, String description, AdImage adImage, User user) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.adImage = adImage;
+        this.user = user;
+    }
 
     public Ad(long id, String title, String description, AdImage adImage, User user, List<Category> categories) {
         this.id = id;
@@ -43,6 +56,12 @@ public class Ad {
         this.categories = categories;
     }
 
+    // empty constructor takes care of the red Ad
+    public Ad() {
+
+    }
+
+    // getters and setters
     public long getId() {
         return id;
     }
@@ -90,4 +109,5 @@ public class Ad {
     public void setCategories(List<Category> categories) {
         this.categories = categories;
     }
+
 }

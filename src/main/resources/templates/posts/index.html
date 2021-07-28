@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org/%22%3E%22%3E
 <head>
     <meta charset="UTF-8"/>
-    <title></title>
+<title>Post index</title>
 </head>
 <body>
+<h1>Here are all the posts</h1>
 
+<h1>Blog</h1>
+<div th:each="post : ${posts}">
+    <p th:text="${post.title}" />
+    <p th:text="${post.body}" />
+</div>
+
+<!--<form th:action="@{/posts/delete/{id}(id=${post.id})}" method="POST">-->
+<!--    <button type="submit">Delete Post</button>-->
+<!--</form>-->
 </body>
-</html>    
+</html>
