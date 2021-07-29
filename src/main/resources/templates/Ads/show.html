@@ -1,25 +1,61 @@
+<!--<!DOCTYPE html>-->
+<!--<html xmlns:th="http://www.thymeleaf.org/" lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--    <th:block th:replace="partials/styles.html  :: styles"></th:block>-->
+
+<!--</head>-->
+<!--<body>-->
+<!--<th:block th:include="partials/navbar.html :: navbar"></th:block>-->
+<!--&lt;!&ndash;Top&ndash;&gt;-->
+<!--<div th:if="${ad}">-->
+<!--    <h2 th:text="${ad.title}">title</h2>-->
+<!--    <p th:text="${ad.description}">description</p>-->
+<!--    <p th:text="${ad.user.username}"></p>-->
+<!--    <span th:each="cat : ${ad.categories}">-->
+<!--        | <span th:text="${cat.name}"></span>-->
+<!--    </span>-->
+<!--</div>-->
+
+<!--&lt;!&ndash;Bottom&ndash;&gt;-->
+<!--<th:block th:include="partials/scripts.html  :: scripts"></th:block>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org/" lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <th:block th:replace="partials/styles.html  :: styles"></th:block>
-
-</head>
-<body>
-<th:block th:include="partials/navbar.html :: navbar"></th:block>
-<!--Top-->
-<div th:if="${ad}">
-    <h2 th:text="${ad.title}">title</h2>
-    <p th:text="${ad.description}">description</p>
-    <p th:text="${ad.user.username}"></p>
-    <span th:each="cat : ${ad.categories}">
-        | <span th:text="${cat.name}"></span>
-    </span>
-</div>
-
-<!--Bottom-->
-<th:block th:include="partials/scripts.html  :: scripts"></th:block>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/david-partials :: head ('Viewing Ad')" />
+<body class="main">
+<nav th:replace="partials/david-partials :: navbar" />
+<header></header>
+<main class="container">
+    <div class="card offwhite-body">
+        <div class="card-image">
+            <img src="../static/img/big-bar.png" th:src="@{/img/big-bar.png}" alt="colorful bar" />
+        </div>
+        <div class="card-content">
+            <h3 class="card-title" th:text="${ad.title}" />
+            <p th:text="${ad.description}" class="i-like-paragraphs" />
+            <p th:text="${ad.user.username}" />
+            <div>
+                <span th:each="cat : ${ad.categories}">
+                    | <span th:text="${cat.name}" /> |
+                </span>
+            </div>
+            <br />
+        </div>
+    </div>
+</main>
+<footer th:replace="partials/david-partials :: footer" />
+<script th:replace="partials/david-partials :: m-script" />
+<script th:replace="partials/david-partials :: j-query" />
 </body>
 </html>

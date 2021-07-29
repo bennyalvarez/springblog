@@ -1,23 +1,63 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org/%22%3E%22%3E-->
+<!--<head>-->
+<!--    <meta charset="UTF-8"/>-->
+<!--<title>Ad index</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Here are all the ads</h1>-->
+
+<!--<ul th:each="ad: ${ads}">-->
+<!--    <th:block>-->
+<!--        <li th:text="${ad.title}"></li>-->
+<!--        <li th:text="${ad.description}"></li>-->
+<!--        <li th:text="${ad.user.username}"></li>-->
+<!--        &lt;!&ndash;        prints out each category&ndash;&gt;-->
+<!--        &lt;!&ndash;        <li th:each="cat : ${ad.categories}">&ndash;&gt;-->
+<!--        &lt;!&ndash;            <span th:text="${cat.name}"></span>&ndash;&gt;-->
+<!--        &lt;!&ndash;        </li>&ndash;&gt;-->
+<!--    </th:block>-->
+
+<!--</ul>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/%22%3E%22%3E
-<head>
-    <meta charset="UTF-8"/>
-<title>Ad index</title>
-</head>
-<body>
-<h1>Here are all the ads</h1>
-
-<ul th:each="ad: ${ads}">
-    <th:block>
-        <li th:text="${ad.title}"></li>
-        <li th:text="${ad.description}"></li>
-        <li th:text="${ad.user.username}"></li>
-        <!--        prints out each category-->
-        <!--        <li th:each="cat : ${ad.categories}">-->
-        <!--            <span th:text="${cat.name}"></span>-->
-        <!--        </li>-->
-    </th:block>
-
-</ul>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials/david-partials :: head ('Viewing All Ads')" />
+<body class="main">
+<nav th:replace="partials/david-partials :: navbar" />
+<header></header>
+<main class="container">
+    <div class="card head-card">
+        <div class="card-image">
+            <img src="../static/img/big-bar.png" th:src="@{/img/big-bar.png}" alt="colorful bar" />
+        </div>
+        <div class="card-content">
+            <h4 class="card-title">Viewing All Ads</h4>
+            <p>Click any ad to view all of its content.</p>
+        </div>
+    </div>
+    <div th:each="ad : ${ads}">
+        <div class="card offwhite-body">
+            <div class="card-image">
+                <img src="../static/img/big-bar.png" th:src="@{/img/big-bar.png}" alt="colorful bar" />
+            </div>
+            <div class="card-content preview-post">
+                <h4 class="card-title" th:text="${ad.title}" />
+                <p th:text="${ad.description}" />
+                <p style="display: flex; justify-content: flex-end; color: maroon" th:text="${ad.user.username}" />
+            </div>
+            <div class="small-space" />
+        </div>
+    </div>
+</main>
+<footer th:replace="partials/david-partials :: footer" />
+<script th:replace="partials/david-partials :: m-script" />
+<script th:replace="partials/david-partials :: j-query" />
 </body>
 </html>
