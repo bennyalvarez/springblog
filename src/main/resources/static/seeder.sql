@@ -18,7 +18,7 @@ VALUES ('Lorem ipsum dolor sit amet, ex pericula persequeris eam, quo quem saper
         'It''s All About LOREM IPSUM', 1);
 
 INSERT INTO springblog_db.posts (body, title)
-VALUES ('Lorem ipsum dolor sit amet, ex pericula pescado eam, quo quem saperet cu. Ne epicurei periculis nec. Nostrud fastidii eu vim.',
+VALUES ('Lorem ipsum dolor sit amet, ex pelicula pescado eam, quo quem saperet cu. Ne epicurei periculis nec. Nostrud fastidii eu vim.',
         '3 Easy Ways To Make LOREM IPSUM Faster'),
        ('Lorem ipsum dolor sit amet, ex pericula persequeris eam, quo quem saperet cu. Ne epicurei periculis nec. Nostrud fastidii eu vim.',
         'Get Rid of LOREM IPSUM For Good'),
