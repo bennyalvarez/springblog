@@ -50,4 +50,22 @@ public class AdController {
         adDao.save(ad);
         return "redirect:/ads";
     }
+
+    @GetMapping("ads/{id}/edit")
+    public String editAdForm(@PathVariable long id, Model model){
+        Ad adToEdit = adDao.getById(id);
+        model.addAttribute("ad", adToEdit);
+        return "ads/create";
+    }
+
+    @PostMapping("/ads/{id}/edit")
+    public String editAd(@PathVariable long id, @ModelAttribute Ad ad) {
+        return createAd(ad);
+    }
+
+    @PostMapping("ads/{id}/delete")
+    public String deleteAd(@PathVariable long id) {
+        adDao.delete(adDao.findById(id));
+        return "redirect:/ads";
+    }
 }
