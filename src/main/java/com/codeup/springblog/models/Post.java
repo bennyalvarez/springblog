@@ -23,13 +23,14 @@ public class Post {
         this.user = user;
     }
 
-    
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
     public Post() {
     }
+
 
     public Post(String title, String body) {
         this.title = title;
